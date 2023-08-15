@@ -28,10 +28,13 @@ class Products{
     int code_ret(){
         return code;
     }
+    void update_quantity(int n){
+        quantity=n;
+
+    }
     
 
 };
-
 class User{
     private: 
     char ch;
@@ -40,7 +43,6 @@ class User{
     string name;
     string address;
     friend class Admin;
-    friend class Customer;
    
 
     public:
@@ -55,33 +57,16 @@ class User{
          }
 
      void getinfo() {
-       
+        char ch;
     cout << "Username: ";
     cin >> username;
     
-    
     if (username.length() == 10) {
-
         cout << "Password: ";
+        cin>>password;
        
-        
-         while ((ch = getch()) != '\r') {
-            if (ch == '\b') {
-                if (!password.empty()) {
-                    password.pop_back();
-                    cout << "\b \b";
-                }
-            } else {
-                password.push_back(ch);
-                cout << '*';
-            }
-        }
-        
-
-       
-    } 
-    
-    else {
+      
+    } else {
         cout << "Username should be a phone number with 10 digits." << endl;
         exit(1);
     }
@@ -93,8 +78,6 @@ class User{
      string &password_comp(){
         return password;
      }
-
-
 };
 class Admin{
     User u1;
@@ -128,4 +111,7 @@ void Homepage();
 void StartShopping();
 void BuyingStore(string s);
 void ShoppingProduct(string s);
+void generatebill(string s);
+void previoushist();
+void update(string ,int ,int);
 };
