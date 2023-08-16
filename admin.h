@@ -138,6 +138,7 @@ void Admin::Homepage() {
         
     }
     Sleep(1000);
+
     cout<<"\n1.Add Products in the stores."<<endl;
     cout<<"\n2.See Products in the stores."<<endl;
     cout<<"\n3.Exit"<<endl;
@@ -184,7 +185,7 @@ void Admin::addrecord(){
         addrecord();
 
         case 3:
-        diskwrite("stre3.dat");
+        diskwrite("store3.dat");
         addrecord();
 
 
